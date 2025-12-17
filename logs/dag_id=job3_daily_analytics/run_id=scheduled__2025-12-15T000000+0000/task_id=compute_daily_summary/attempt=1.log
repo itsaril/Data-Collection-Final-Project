@@ -1,0 +1,53 @@
+[2025-12-16T08:24:34.928+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job3_daily_analytics.compute_daily_summary scheduled__2025-12-15T00:00:00+00:00 [queued]>
+[2025-12-16T08:24:34.952+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job3_daily_analytics.compute_daily_summary scheduled__2025-12-15T00:00:00+00:00 [queued]>
+[2025-12-16T08:24:34.953+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-12-16T08:24:34.997+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): compute_daily_summary> on 2025-12-15 00:00:00+00:00
+[2025-12-16T08:24:35.019+0000] {standard_task_runner.py:57} INFO - Started process 257 to run task
+[2025-12-16T08:24:35.039+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job3_daily_analytics', 'compute_daily_summary', 'scheduled__2025-12-15T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/job3_daily_summary_dag.py', '--cfg-path', '/tmp/tmpc9u9d9gr']
+[2025-12-16T08:24:35.055+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask compute_daily_summary
+[2025-12-16T08:24:35.302+0000] {task_command.py:416} INFO - Running <TaskInstance: job3_daily_analytics.compute_daily_summary scheduled__2025-12-15T00:00:00+00:00 [running]> on host e0891a411581
+[2025-12-16T08:24:35.893+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job3_daily_analytics' AIRFLOW_CTX_TASK_ID='compute_daily_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-12-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-15T00:00:00+00:00'
+[2025-12-16T08:24:35.896+0000] {logging_mixin.py:154} INFO - Computing analytics for date: 2025-12-15
+[2025-12-16T08:24:35.932+0000] {logging_mixin.py:154} INFO - No data available for analytics
+[2025-12-16T08:24:35.934+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-12-16T08:24:35.976+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=job3_daily_analytics, task_id=compute_daily_summary, execution_date=20251215T000000, start_date=20251216T082434, end_date=20251216T082435
+[2025-12-16T08:24:36.136+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-16T08:24:36.209+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-16T11:12:28.086+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job3_daily_analytics.compute_daily_summary scheduled__2025-12-15T00:00:00+00:00 [queued]>
+[2025-12-16T11:12:28.095+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job3_daily_analytics.compute_daily_summary scheduled__2025-12-15T00:00:00+00:00 [queued]>
+[2025-12-16T11:12:28.095+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-12-16T11:12:28.106+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): compute_daily_summary> on 2025-12-15 00:00:00+00:00
+[2025-12-16T11:12:28.111+0000] {standard_task_runner.py:57} INFO - Started process 224 to run task
+[2025-12-16T11:12:28.115+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job3_daily_analytics', 'compute_daily_summary', 'scheduled__2025-12-15T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/job3_daily_summary_dag.py', '--cfg-path', '/tmp/tmp9o4k70hs']
+[2025-12-16T11:12:28.118+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask compute_daily_summary
+[2025-12-16T11:12:28.188+0000] {task_command.py:416} INFO - Running <TaskInstance: job3_daily_analytics.compute_daily_summary scheduled__2025-12-15T00:00:00+00:00 [running]> on host 88b5a86de249
+[2025-12-16T11:12:28.403+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job3_daily_analytics' AIRFLOW_CTX_TASK_ID='compute_daily_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-12-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-15T00:00:00+00:00'
+[2025-12-16T11:12:28.404+0000] {logging_mixin.py:154} INFO - Computing analytics for date: 2025-12-15
+[2025-12-16T11:12:28.412+0000] {logging_mixin.py:154} INFO - Total records to analyze: 34
+[2025-12-16T11:12:28.425+0000] {logging_mixin.py:154} INFO - 
+Daily Summary Statistics:
+[2025-12-16T11:12:28.428+0000] {logging_mixin.py:154} INFO -       date location  avg_temperature  min_temperature  max_temperature  avg_humidity  avg_wind_speed  total_precipitation  record_count
+2025-12-16   Almaty             1.17              0.5              1.7         78.00            0.90                  0.0            12
+2025-12-16   Astana            -8.26             -8.6             -8.1         83.36            6.75                  0.0            11
+2025-12-16 Shymkent             5.93              5.6              6.3         57.45            1.20                  0.0            11
+[2025-12-16T11:12:28.472+0000] {logging_mixin.py:154} INFO - Inserted 3 records into daily_summary table
+[2025-12-16T11:12:28.473+0000] {logging_mixin.py:154} INFO - 
+=== Additional Insights ===
+[2025-12-16T11:12:28.478+0000] {logging_mixin.py:154} INFO - 
+Overall Statistics:
+[2025-12-16T11:12:28.486+0000] {logging_mixin.py:154} INFO -       temperature   humidity  wind_speed  precipitation
+mean    -0.344118  73.088235    2.888235            NaN
+std      5.916807  11.453113         NaN            NaN
+max           NaN        NaN    7.700000            NaN
+sum           NaN        NaN         NaN            0.0
+[2025-12-16T11:12:28.487+0000] {logging_mixin.py:154} INFO - 
+Temperature by Location:
+[2025-12-16T11:12:28.489+0000] {logging_mixin.py:154} INFO - location
+Shymkent    5.93
+Almaty      1.17
+Astana     -8.26
+Name: avg_temperature, dtype: float64
+[2025-12-16T11:12:28.490+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-12-16T11:12:28.501+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=job3_daily_analytics, task_id=compute_daily_summary, execution_date=20251215T000000, start_date=20251216T111228, end_date=20251216T111228
+[2025-12-16T11:12:28.529+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-16T11:12:28.551+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

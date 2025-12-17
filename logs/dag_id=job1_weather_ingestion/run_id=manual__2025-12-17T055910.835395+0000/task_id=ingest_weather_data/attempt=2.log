@@ -1,0 +1,48 @@
+[2025-12-17T06:04:57.840+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data manual__2025-12-17T05:59:10.835395+00:00 [queued]>
+[2025-12-17T06:04:57.871+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data manual__2025-12-17T05:59:10.835395+00:00 [queued]>
+[2025-12-17T06:04:57.872+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-12-17T06:04:57.898+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): ingest_weather_data> on 2025-12-17 05:59:10.835395+00:00
+[2025-12-17T06:04:57.947+0000] {standard_task_runner.py:57} INFO - Started process 175 to run task
+[2025-12-17T06:04:57.958+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job1_weather_ingestion', 'ingest_weather_data', 'manual__2025-12-17T05:59:10.835395+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/job1_ingestion_dag.py', '--cfg-path', '/tmp/tmpcbjdsy9d']
+[2025-12-17T06:04:57.968+0000] {standard_task_runner.py:85} INFO - Job 34: Subtask ingest_weather_data
+[2025-12-17T06:04:58.401+0000] {task_command.py:416} INFO - Running <TaskInstance: job1_weather_ingestion.ingest_weather_data manual__2025-12-17T05:59:10.835395+00:00 [running]> on host 623e93b4b3f8
+[2025-12-17T06:04:58.721+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job1_weather_ingestion' AIRFLOW_CTX_TASK_ID='ingest_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2025-12-17T05:59:10.835395+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-17T05:59:10.835395+00:00'
+[2025-12-17T06:04:58.734+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-17T06:04:58.735+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2025-12-17T06:04:58.738+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-17T06:04:58.881+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2025-12-17T06:04:58.885+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2025-12-17T06:04:58.909+0000] {logging_mixin.py:154} INFO - Starting weather data producer for 55 minutes...
+[2025-12-17T06:05:00.322+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-17T06:05:00.328+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-17T06:05:00.333+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-17T06:05:01.269+0000] {logging_mixin.py:154} INFO - Sent message #1: Almaty - Temp: 3.6°C, Humidity: 69%
+[2025-12-17T06:07:01.968+0000] {logging_mixin.py:154} INFO - Sent message #2: Astana - Temp: -15.6°C, Humidity: 80%
+[2025-12-17T06:09:02.640+0000] {logging_mixin.py:154} INFO - Sent message #3: Shymkent - Temp: 3.5°C, Humidity: 91%
+[2025-12-17T06:12:03.600+0000] {logging_mixin.py:154} INFO - Sent message #4: Almaty - Temp: 3.6°C, Humidity: 69%
+[2025-12-17T06:14:04.423+0000] {logging_mixin.py:154} INFO - Sent message #5: Astana - Temp: -15.6°C, Humidity: 80%
+[2025-12-17T06:15:36.587+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-12-17T06:15:36.711+0000] {process_utils.py:131} INFO - Sending 15 to group 175. PIDs of all processes in the group: [175]
+[2025-12-17T06:15:36.714+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 175
+[2025-12-17T06:15:36.723+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-12-17T06:15:36.735+0000] {kafka.py:483} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2025-12-17T06:15:36.765+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-17T06:15:36.772+0000] {logging_mixin.py:154} INFO - Producer finished. Total messages sent: 5
+[2025-12-17T06:15:36.964+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/job1_ingestion_dag.py", line 30, in ingestion_task
+    run_producer(duration_minutes=55)
+  File "/opt/airflow/src/job1_producer.py", line 84, in run_producer
+    time.sleep(120)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-12-17T06:15:37.047+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=job1_weather_ingestion, task_id=ingest_weather_data, execution_date=20251217T055910, start_date=20251217T060457, end_date=20251217T061537
+[2025-12-17T06:15:37.193+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 34 for task ingest_weather_data (Task received SIGTERM signal; 175)
+[2025-12-17T06:15:37.255+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=175, status='terminated', exitcode=1, started='06:04:57') (175) terminated with exit code 1
+[2025-12-17T06:15:37.260+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2025-12-17T06:15:37.410+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,40 @@
+[2025-12-17T09:27:20.498+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job3_daily_analytics.compute_daily_summary manual__2025-12-17T09:27:19.631823+00:00 [queued]>
+[2025-12-17T09:27:20.506+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job3_daily_analytics.compute_daily_summary manual__2025-12-17T09:27:19.631823+00:00 [queued]>
+[2025-12-17T09:27:20.507+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-12-17T09:27:20.520+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): compute_daily_summary> on 2025-12-17 09:27:19.631823+00:00
+[2025-12-17T09:27:20.525+0000] {standard_task_runner.py:57} INFO - Started process 5964 to run task
+[2025-12-17T09:27:20.529+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job3_daily_analytics', 'compute_daily_summary', 'manual__2025-12-17T09:27:19.631823+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/job3_daily_summary_dag.py', '--cfg-path', '/tmp/tmp492hcgt_']
+[2025-12-17T09:27:20.532+0000] {standard_task_runner.py:85} INFO - Job 27: Subtask compute_daily_summary
+[2025-12-17T09:27:20.595+0000] {task_command.py:416} INFO - Running <TaskInstance: job3_daily_analytics.compute_daily_summary manual__2025-12-17T09:27:19.631823+00:00 [running]> on host 2610621bd5d4
+[2025-12-17T09:27:21.234+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job3_daily_analytics' AIRFLOW_CTX_TASK_ID='compute_daily_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-12-17T09:27:19.631823+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-17T09:27:19.631823+00:00'
+[2025-12-17T09:27:21.235+0000] {logging_mixin.py:154} INFO - Computing analytics for date: 2025-12-16
+[2025-12-17T09:27:21.242+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2674, in execute
+    cur.execute(sql, *args)
+sqlite3.OperationalError: no such table: events
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/job3_daily_summary_dag.py", line 30, in analytics_task
+    compute_daily_analytics()
+  File "/opt/airflow/src/job3_analytics.py", line 16, in compute_daily_analytics
+    df = read_events(date_from=target_date)
+  File "/opt/airflow/src/db_utils.py", line 78, in read_events
+    df = pd.read_sql_query(query, conn)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 526, in read_sql_query
+    return pandas_sql.read_query(
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2738, in read_query
+    cursor = self.execute(sql, params)
+  File "/home/airflow/.local/lib/python3.10/site-packages/pandas/io/sql.py", line 2686, in execute
+    raise ex from exc
+pandas.errors.DatabaseError: Execution failed on sql 'SELECT * FROM events WHERE DATE(timestamp) >= '2025-12-16'': no such table: events
+[2025-12-17T09:27:21.257+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=job3_daily_analytics, task_id=compute_daily_summary, execution_date=20251217T092719, start_date=20251217T092720, end_date=20251217T092721
+[2025-12-17T09:27:21.278+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 27 for task compute_daily_summary (Execution failed on sql 'SELECT * FROM events WHERE DATE(timestamp) >= '2025-12-16'': no such table: events; 5964)
+[2025-12-17T09:27:21.305+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-12-17T09:27:21.362+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,37 @@
+[2025-12-16T14:00:01.936+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-16T13:00:00+00:00 [queued]>
+[2025-12-16T14:00:01.955+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-16T13:00:00+00:00 [queued]>
+[2025-12-16T14:00:01.957+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-12-16T14:00:02.003+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): ingest_weather_data> on 2025-12-16 13:00:00+00:00
+[2025-12-16T14:00:02.014+0000] {standard_task_runner.py:57} INFO - Started process 2484 to run task
+[2025-12-16T14:00:02.026+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job1_weather_ingestion', 'ingest_weather_data', 'scheduled__2025-12-16T13:00:00+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/job1_ingestion_dag.py', '--cfg-path', '/tmp/tmpv2rbqqjf']
+[2025-12-16T14:00:02.037+0000] {standard_task_runner.py:85} INFO - Job 43: Subtask ingest_weather_data
+[2025-12-16T14:00:02.250+0000] {task_command.py:416} INFO - Running <TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-16T13:00:00+00:00 [running]> on host 368de0f02f1d
+[2025-12-16T14:00:02.453+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job1_weather_ingestion' AIRFLOW_CTX_TASK_ID='ingest_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2025-12-16T13:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-16T13:00:00+00:00'
+[2025-12-16T14:00:02.461+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T14:00:02.468+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2025-12-16T14:00:02.470+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T14:00:02.579+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2025-12-16T14:00:02.580+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2025-12-16T14:00:02.588+0000] {logging_mixin.py:154} INFO - Starting weather data producer for 55 minutes...
+[2025-12-16T14:00:03.229+0000] {logging_mixin.py:154} INFO - Sent message #1: Almaty - Temp: -1.1°C, Humidity: 71%
+[2025-12-16T14:00:03.232+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T14:00:03.238+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T14:00:03.240+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T14:05:31.290+0000] {logging_mixin.py:154} INFO - Sent message #2: Astana - Temp: -11.5°C, Humidity: 80%
+[2025-12-16T14:10:59.215+0000] {logging_mixin.py:154} INFO - Sent message #3: Shymkent - Temp: 2.3°C, Humidity: 87%
+[2025-12-16T14:17:32.715+0000] {logging_mixin.py:154} INFO - Sent message #4: Almaty - Temp: -1.1°C, Humidity: 71%
+[2025-12-16T14:23:00.575+0000] {logging_mixin.py:154} INFO - Sent message #5: Astana - Temp: -11.5°C, Humidity: 80%
+[2025-12-16T14:28:28.455+0000] {logging_mixin.py:154} INFO - Sent message #6: Shymkent - Temp: 2.3°C, Humidity: 88%
+[2025-12-16T14:35:01.829+0000] {logging_mixin.py:154} INFO - Sent message #7: Almaty - Temp: -2°C, Humidity: 73%
+[2025-12-16T14:40:29.766+0000] {logging_mixin.py:154} INFO - Sent message #8: Astana - Temp: -12.2°C, Humidity: 78%
+[2025-12-16T14:45:57.690+0000] {logging_mixin.py:154} INFO - Sent message #9: Shymkent - Temp: 2.5°C, Humidity: 87%
+[2025-12-16T14:52:31.047+0000] {logging_mixin.py:154} INFO - Sent message #10: Almaty - Temp: -2°C, Humidity: 73%
+[2025-12-16T14:57:58.918+0000] {logging_mixin.py:154} INFO - Sent message #11: Astana - Temp: -12.2°C, Humidity: 78%
+[2025-12-16T15:03:26.807+0000] {logging_mixin.py:154} INFO - Sent message #12: Shymkent - Temp: 2.9°C, Humidity: 85%
+[2025-12-16T15:09:59.622+0000] {kafka.py:483} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2025-12-16T15:09:59.636+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T15:09:59.639+0000] {logging_mixin.py:154} INFO - Producer finished. Total messages sent: 12
+[2025-12-16T15:09:59.643+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-12-16T15:09:59.700+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=job1_weather_ingestion, task_id=ingest_weather_data, execution_date=20251216T130000, start_date=20251216T140001, end_date=20251216T150959
+[2025-12-16T15:09:59.777+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-16T15:09:59.816+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

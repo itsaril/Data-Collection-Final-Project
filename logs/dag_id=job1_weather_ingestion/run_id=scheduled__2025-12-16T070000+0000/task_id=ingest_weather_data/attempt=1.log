@@ -1,0 +1,97 @@
+[2025-12-16T08:24:31.569+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-16T07:00:00+00:00 [queued]>
+[2025-12-16T08:24:31.584+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-16T07:00:00+00:00 [queued]>
+[2025-12-16T08:24:31.585+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-12-16T08:24:31.629+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): ingest_weather_data> on 2025-12-16 07:00:00+00:00
+[2025-12-16T08:24:31.639+0000] {standard_task_runner.py:57} INFO - Started process 250 to run task
+[2025-12-16T08:24:31.649+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job1_weather_ingestion', 'ingest_weather_data', 'scheduled__2025-12-16T07:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/job1_ingestion_dag.py', '--cfg-path', '/tmp/tmpask54s5w']
+[2025-12-16T08:24:31.661+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask ingest_weather_data
+[2025-12-16T08:24:31.825+0000] {task_command.py:416} INFO - Running <TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-16T07:00:00+00:00 [running]> on host e0891a411581
+[2025-12-16T08:24:32.026+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job1_weather_ingestion' AIRFLOW_CTX_TASK_ID='ingest_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2025-12-16T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-16T07:00:00+00:00'
+[2025-12-16T08:24:32.035+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T08:24:32.036+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2025-12-16T08:24:32.039+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T08:24:32.166+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2025-12-16T08:24:32.168+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2025-12-16T08:24:32.173+0000] {logging_mixin.py:154} INFO - Starting weather data producer for 55 minutes...
+[2025-12-16T08:24:32.885+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T08:24:32.887+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T08:24:32.887+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T08:24:33.706+0000] {logging_mixin.py:154} INFO - Sent message #1: Almaty - Temp: 0.5°C, Humidity: 82%
+[2025-12-16T08:24:44.288+0000] {logging_mixin.py:154} INFO - Sent message #2: Astana - Temp: -8.1°C, Humidity: 82%
+[2025-12-16T08:24:57.582+0000] {logging_mixin.py:154} INFO - Sent message #3: Shymkent - Temp: 5.6°C, Humidity: 58%
+[2025-12-16T08:26:02.714+0000] {logging_mixin.py:154} INFO - Sent message #4: Almaty - Temp: 0.5°C, Humidity: 82%
+[2025-12-16T08:26:13.123+0000] {logging_mixin.py:154} INFO - Sent message #5: Astana - Temp: -8.1°C, Humidity: 82%
+[2025-12-16T08:26:23.625+0000] {logging_mixin.py:154} INFO - Sent message #6: Shymkent - Temp: 5.6°C, Humidity: 58%
+[2025-12-16T08:27:30.439+0000] {logging_mixin.py:154} INFO - Sent message #7: Almaty - Temp: 0.5°C, Humidity: 82%
+[2025-12-16T08:27:43.539+0000] {logging_mixin.py:154} INFO - Sent message #8: Astana - Temp: -8.1°C, Humidity: 82%
+[2025-12-16T08:27:53.886+0000] {logging_mixin.py:154} INFO - Sent message #9: Shymkent - Temp: 5.6°C, Humidity: 58%
+[2025-12-16T08:29:01.227+0000] {logging_mixin.py:154} INFO - Sent message #10: Almaty - Temp: 0.5°C, Humidity: 82%
+[2025-12-16T08:29:11.570+0000] {logging_mixin.py:154} INFO - Sent message #11: Astana - Temp: -8.1°C, Humidity: 82%
+[2025-12-16T08:29:23.264+0000] {logging_mixin.py:154} INFO - Sent message #12: Shymkent - Temp: 5.6°C, Humidity: 58%
+[2025-12-16T08:30:29.245+0000] {logging_mixin.py:154} INFO - Sent message #13: Almaty - Temp: 0.5°C, Humidity: 82%
+[2025-12-16T08:30:39.636+0000] {logging_mixin.py:154} INFO - Sent message #14: Astana - Temp: -8.1°C, Humidity: 82%
+[2025-12-16T08:30:49.559+0000] {logging_mixin.py:154} INFO - Sent message #15: Shymkent - Temp: 5.6°C, Humidity: 58%
+[2025-12-16T08:31:58.669+0000] {logging_mixin.py:154} INFO - Sent message #16: Almaty - Temp: 1.6°C, Humidity: 76%
+[2025-12-16T08:32:09.014+0000] {logging_mixin.py:154} INFO - Sent message #17: Astana - Temp: -8.2°C, Humidity: 85%
+[2025-12-16T08:32:19.350+0000] {logging_mixin.py:154} INFO - Sent message #18: Shymkent - Temp: 6.1°C, Humidity: 55%
+[2025-12-16T08:33:25.332+0000] {logging_mixin.py:154} INFO - Sent message #19: Almaty - Temp: 1.6°C, Humidity: 76%
+[2025-12-16T08:33:38.406+0000] {logging_mixin.py:154} INFO - Sent message #20: Astana - Temp: -8.2°C, Humidity: 85%
+[2025-12-16T08:33:48.770+0000] {logging_mixin.py:154} INFO - Sent message #21: Shymkent - Temp: 6.1°C, Humidity: 55%
+[2025-12-16T08:34:54.746+0000] {logging_mixin.py:154} INFO - Sent message #22: Almaty - Temp: 1.6°C, Humidity: 76%
+[2025-12-16T08:35:05.109+0000] {logging_mixin.py:154} INFO - Sent message #23: Astana - Temp: -8.2°C, Humidity: 85%
+[2025-12-16T08:35:18.177+0000] {logging_mixin.py:154} INFO - Sent message #24: Shymkent - Temp: 6.1°C, Humidity: 55%
+[2025-12-16T08:36:24.116+0000] {logging_mixin.py:154} INFO - Sent message #25: Almaty - Temp: 1.6°C, Humidity: 76%
+[2025-12-16T08:36:34.464+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:36:44.789+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:37:50.449+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:38:03.513+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:38:13.851+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:39:19.788+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:39:30.145+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:39:43.190+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:40:49.174+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:40:59.507+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:41:09.832+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:42:15.767+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:42:28.820+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:42:39.179+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:43:45.078+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:43:58.143+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:44:08.485+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:45:14.383+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:45:24.746+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:45:37.219+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:46:43.741+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:46:54.089+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:47:04.449+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:48:10.375+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:48:23.464+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:48:33.813+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:49:39.752+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:49:50.099+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:50:03.153+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T08:50:03.604+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-12-16T08:50:03.628+0000] {process_utils.py:131} INFO - Sending 15 to group 250. PIDs of all processes in the group: [250]
+[2025-12-16T08:50:03.647+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 250
+[2025-12-16T08:50:03.655+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-12-16T08:50:03.658+0000] {kafka.py:483} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2025-12-16T08:50:03.676+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T08:50:03.680+0000] {logging_mixin.py:154} INFO - Producer finished. Total messages sent: 25
+[2025-12-16T08:50:03.764+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/job1_ingestion_dag.py", line 30, in ingestion_task
+    run_producer(duration_minutes=55)
+  File "/opt/airflow/src/job1_producer.py", line 84, in run_producer
+    time.sleep(10)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-12-16T08:50:03.788+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=job1_weather_ingestion, task_id=ingest_weather_data, execution_date=20251216T070000, start_date=20251216T082431, end_date=20251216T085003
+[2025-12-16T08:50:03.821+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 4 for task ingest_weather_data (Task received SIGTERM signal; 250)
+[2025-12-16T08:50:03.831+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=250, status='terminated', exitcode=1, started='08:24:31') (250) terminated with exit code 1
+[2025-12-16T08:50:03.833+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2025-12-16T08:50:03.864+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

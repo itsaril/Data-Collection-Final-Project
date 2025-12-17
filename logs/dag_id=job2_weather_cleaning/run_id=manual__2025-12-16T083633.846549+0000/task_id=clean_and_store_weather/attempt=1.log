@@ -1,0 +1,72 @@
+[2025-12-16T08:36:34.775+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job2_weather_cleaning.clean_and_store_weather manual__2025-12-16T08:36:33.846549+00:00 [queued]>
+[2025-12-16T08:36:34.782+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job2_weather_cleaning.clean_and_store_weather manual__2025-12-16T08:36:33.846549+00:00 [queued]>
+[2025-12-16T08:36:34.783+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-12-16T08:36:34.796+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): clean_and_store_weather> on 2025-12-16 08:36:33.846549+00:00
+[2025-12-16T08:36:34.803+0000] {standard_task_runner.py:57} INFO - Started process 652 to run task
+[2025-12-16T08:36:34.806+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job2_weather_cleaning', 'clean_and_store_weather', 'manual__2025-12-16T08:36:33.846549+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/job2_clean_store_dag.py', '--cfg-path', '/tmp/tmpinoswix_']
+[2025-12-16T08:36:34.810+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask clean_and_store_weather
+[2025-12-16T08:36:34.871+0000] {task_command.py:416} INFO - Running <TaskInstance: job2_weather_cleaning.clean_and_store_weather manual__2025-12-16T08:36:33.846549+00:00 [running]> on host e0891a411581
+[2025-12-16T08:36:34.952+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job2_weather_cleaning' AIRFLOW_CTX_TASK_ID='clean_and_store_weather' AIRFLOW_CTX_EXECUTION_DATE='2025-12-16T08:36:33.846549+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-16T08:36:33.846549+00:00'
+[2025-12-16T08:36:34.965+0000] {logging_mixin.py:154} INFO - Database initialized at /opt/***/data/app.db
+[2025-12-16T08:36:34.969+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T08:36:34.969+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2025-12-16T08:36:34.971+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T08:36:35.077+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2025-12-16T08:36:35.078+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2025-12-16T08:36:35.081+0000] {subscription_state.py:171} INFO - Updating subscribed topics to: ('raw_weather_events',)
+[2025-12-16T08:36:35.082+0000] {logging_mixin.py:154} INFO - Starting to consume messages from Kafka...
+[2025-12-16T08:36:35.086+0000] {cluster.py:371} INFO - Group coordinator for weather_cleaner_group is ('coordinator-1', 'kafka', 29092, None)
+[2025-12-16T08:36:35.087+0000] {base.py:693} INFO - Discovered coordinator coordinator-1 for group weather_cleaner_group
+[2025-12-16T08:36:35.087+0000] {base.py:741} INFO - Starting new heartbeat thread
+[2025-12-16T08:36:35.088+0000] {consumer.py:348} INFO - Revoking previously assigned partitions () for group weather_cleaner_group
+[2025-12-16T08:36:35.090+0000] {conn.py:380} INFO - <BrokerConnection node_id=coordinator-1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T08:36:35.091+0000] {conn.py:410} INFO - <BrokerConnection node_id=coordinator-1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T08:36:35.091+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T08:36:35.193+0000] {base.py:450} INFO - (Re-)joining group weather_cleaner_group
+[2025-12-16T08:36:38.200+0000] {base.py:521} INFO - Elected group leader -- performing partition assignments using range
+[2025-12-16T08:36:38.202+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T08:36:38.203+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T08:36:38.206+0000] {base.py:335} INFO - Successfully joined group weather_cleaner_group with generation 3
+[2025-12-16T08:36:38.206+0000] {subscription_state.py:257} INFO - Updated partition assignment: [('raw_weather_events', 0)]
+[2025-12-16T08:36:38.207+0000] {consumer.py:245} INFO - Setting newly assigned partitions (('raw_weather_events', 0),) for group weather_cleaner_group
+[2025-12-16T08:36:38.213+0000] {logging_mixin.py:154} INFO - Consumed message: Shymkent at 2025-12-16T08:24:00Z
+[2025-12-16T08:36:38.214+0000] {logging_mixin.py:154} INFO - Consumed message: Almaty at 2025-12-16T08:26:00Z
+[2025-12-16T08:36:38.214+0000] {logging_mixin.py:154} INFO - Consumed message: Astana at 2025-12-16T08:26:00Z
+[2025-12-16T08:36:38.214+0000] {logging_mixin.py:154} INFO - Consumed message: Shymkent at 2025-12-16T08:26:00Z
+[2025-12-16T08:36:38.215+0000] {logging_mixin.py:154} INFO - Consumed message: Almaty at 2025-12-16T08:27:00Z
+[2025-12-16T08:36:38.215+0000] {logging_mixin.py:154} INFO - Consumed message: Astana at 2025-12-16T08:27:00Z
+[2025-12-16T08:36:38.215+0000] {logging_mixin.py:154} INFO - Consumed message: Shymkent at 2025-12-16T08:27:00Z
+[2025-12-16T08:36:38.215+0000] {logging_mixin.py:154} INFO - Consumed message: Almaty at 2025-12-16T08:29:00Z
+[2025-12-16T08:36:38.215+0000] {logging_mixin.py:154} INFO - Consumed message: Astana at 2025-12-16T08:29:00Z
+[2025-12-16T08:36:38.215+0000] {logging_mixin.py:154} INFO - Consumed message: Shymkent at 2025-12-16T08:29:00Z
+[2025-12-16T08:36:38.216+0000] {logging_mixin.py:154} INFO - Consumed message: Almaty at 2025-12-16T08:30:00Z
+[2025-12-16T08:36:38.216+0000] {logging_mixin.py:154} INFO - Consumed message: Astana at 2025-12-16T08:30:00Z
+[2025-12-16T08:36:38.216+0000] {logging_mixin.py:154} INFO - Consumed message: Shymkent at 2025-12-16T08:30:00Z
+[2025-12-16T08:36:38.216+0000] {logging_mixin.py:154} INFO - Consumed message: Almaty at 2025-12-16T08:31:00Z
+[2025-12-16T08:36:38.216+0000] {logging_mixin.py:154} INFO - Consumed message: Astana at 2025-12-16T08:32:00Z
+[2025-12-16T08:36:38.216+0000] {logging_mixin.py:154} INFO - Consumed message: Shymkent at 2025-12-16T08:32:00Z
+[2025-12-16T08:36:38.217+0000] {logging_mixin.py:154} INFO - Consumed message: Almaty at 2025-12-16T08:33:00Z
+[2025-12-16T08:36:38.217+0000] {logging_mixin.py:154} INFO - Consumed message: Astana at 2025-12-16T08:33:00Z
+[2025-12-16T08:36:38.217+0000] {logging_mixin.py:154} INFO - Consumed message: Shymkent at 2025-12-16T08:33:00Z
+[2025-12-16T08:36:38.217+0000] {logging_mixin.py:154} INFO - Consumed message: Almaty at 2025-12-16T08:34:00Z
+[2025-12-16T08:36:38.218+0000] {logging_mixin.py:154} INFO - Consumed message: Astana at 2025-12-16T08:35:00Z
+[2025-12-16T08:36:38.218+0000] {logging_mixin.py:154} INFO - Consumed message: Shymkent at 2025-12-16T08:35:00Z
+[2025-12-16T08:36:38.218+0000] {logging_mixin.py:154} INFO - Consumed message: Almaty at 2025-12-16T08:36:00Z
+[2025-12-16T08:36:48.222+0000] {base.py:748} INFO - Stopping heartbeat thread
+[2025-12-16T08:36:48.223+0000] {base.py:773} INFO - Leaving consumer group (weather_cleaner_group).
+[2025-12-16T08:36:48.226+0000] {conn.py:919} INFO - <BrokerConnection node_id=coordinator-1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T08:36:48.227+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T08:36:48.228+0000] {future.py:79} ERROR - Fetch to node 1 failed: Cancelled: <BrokerConnection node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>
+[2025-12-16T08:36:48.228+0000] {logging_mixin.py:154} INFO - 
+Total messages consumed: 23
+[2025-12-16T08:36:48.232+0000] {logging_mixin.py:154} INFO - Initial records: 23
+[2025-12-16T08:36:48.235+0000] {logging_mixin.py:154} INFO - After removing duplicates: 23
+[2025-12-16T08:36:48.243+0000] {logging_mixin.py:154} INFO - After removing invalid timestamps: 23
+[2025-12-16T08:36:48.245+0000] {logging_mixin.py:154} INFO - After range validation: 23
+[2025-12-16T08:36:48.250+0000] {logging_mixin.py:154} INFO - Final cleaned records: 23
+[2025-12-16T08:36:48.269+0000] {logging_mixin.py:154} INFO - Inserted 23 records into events table
+[2025-12-16T08:36:48.269+0000] {logging_mixin.py:154} INFO - Successfully inserted 23 cleaned records
+[2025-12-16T08:36:48.270+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-12-16T08:36:48.277+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=job2_weather_cleaning, task_id=clean_and_store_weather, execution_date=20251216T083633, start_date=20251216T083634, end_date=20251216T083648
+[2025-12-16T08:36:48.325+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-16T08:36:48.337+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

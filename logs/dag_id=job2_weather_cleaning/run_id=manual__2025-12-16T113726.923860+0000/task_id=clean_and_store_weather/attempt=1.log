@@ -1,0 +1,41 @@
+[2025-12-16T11:37:28.059+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job2_weather_cleaning.clean_and_store_weather manual__2025-12-16T11:37:26.923860+00:00 [queued]>
+[2025-12-16T11:37:28.067+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job2_weather_cleaning.clean_and_store_weather manual__2025-12-16T11:37:26.923860+00:00 [queued]>
+[2025-12-16T11:37:28.068+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-12-16T11:37:28.081+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): clean_and_store_weather> on 2025-12-16 11:37:26.923860+00:00
+[2025-12-16T11:37:28.086+0000] {standard_task_runner.py:57} INFO - Started process 465 to run task
+[2025-12-16T11:37:28.090+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job2_weather_cleaning', 'clean_and_store_weather', 'manual__2025-12-16T11:37:26.923860+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/job2_clean_store_dag.py', '--cfg-path', '/tmp/tmpakxb6s0o']
+[2025-12-16T11:37:28.094+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask clean_and_store_weather
+[2025-12-16T11:37:28.152+0000] {task_command.py:416} INFO - Running <TaskInstance: job2_weather_cleaning.clean_and_store_weather manual__2025-12-16T11:37:26.923860+00:00 [running]> on host 88b5a86de249
+[2025-12-16T11:37:28.224+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job2_weather_cleaning' AIRFLOW_CTX_TASK_ID='clean_and_store_weather' AIRFLOW_CTX_EXECUTION_DATE='2025-12-16T11:37:26.923860+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-16T11:37:26.923860+00:00'
+[2025-12-16T11:37:28.235+0000] {logging_mixin.py:154} INFO - Database initialized at /opt/***/data/app.db
+[2025-12-16T11:37:28.238+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T11:37:28.239+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2025-12-16T11:37:28.240+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T11:37:28.346+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2025-12-16T11:37:28.347+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2025-12-16T11:37:28.349+0000] {subscription_state.py:171} INFO - Updating subscribed topics to: ('raw_weather_events',)
+[2025-12-16T11:37:28.350+0000] {logging_mixin.py:154} INFO - Starting to consume messages from Kafka...
+[2025-12-16T11:37:28.354+0000] {cluster.py:371} INFO - Group coordinator for weather_cleaner_group is ('coordinator-1', 'kafka', 29092, None)
+[2025-12-16T11:37:28.355+0000] {base.py:693} INFO - Discovered coordinator coordinator-1 for group weather_cleaner_group
+[2025-12-16T11:37:28.355+0000] {base.py:741} INFO - Starting new heartbeat thread
+[2025-12-16T11:37:28.356+0000] {consumer.py:348} INFO - Revoking previously assigned partitions () for group weather_cleaner_group
+[2025-12-16T11:37:28.358+0000] {conn.py:380} INFO - <BrokerConnection node_id=coordinator-1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T11:37:28.359+0000] {conn.py:410} INFO - <BrokerConnection node_id=coordinator-1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T11:37:28.359+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T11:37:28.460+0000] {base.py:450} INFO - (Re-)joining group weather_cleaner_group
+[2025-12-16T11:37:31.471+0000] {base.py:521} INFO - Elected group leader -- performing partition assignments using range
+[2025-12-16T11:37:31.474+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T11:37:31.475+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T11:37:31.479+0000] {base.py:335} INFO - Successfully joined group weather_cleaner_group with generation 7
+[2025-12-16T11:37:31.479+0000] {subscription_state.py:257} INFO - Updated partition assignment: [('raw_weather_events', 0)]
+[2025-12-16T11:37:31.480+0000] {consumer.py:245} INFO - Setting newly assigned partitions (('raw_weather_events', 0),) for group weather_cleaner_group
+[2025-12-16T11:37:38.359+0000] {base.py:748} INFO - Stopping heartbeat thread
+[2025-12-16T11:37:38.360+0000] {base.py:773} INFO - Leaving consumer group (weather_cleaner_group).
+[2025-12-16T11:37:38.366+0000] {conn.py:919} INFO - <BrokerConnection node_id=coordinator-1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T11:37:38.367+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T11:37:38.368+0000] {future.py:79} ERROR - Fetch to node 1 failed: Cancelled: <BrokerConnection node_id=1 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>
+[2025-12-16T11:37:38.369+0000] {logging_mixin.py:154} INFO - No messages were consumed
+[2025-12-16T11:37:38.370+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-12-16T11:37:38.378+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=job2_weather_cleaning, task_id=clean_and_store_weather, execution_date=20251216T113726, start_date=20251216T113728, end_date=20251216T113738
+[2025-12-16T11:37:38.404+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-16T11:37:38.417+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

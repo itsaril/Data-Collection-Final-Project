@@ -1,0 +1,48 @@
+[2025-12-16T10:54:29.816+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data manual__2025-12-16T10:48:11.424003+00:00 [queued]>
+[2025-12-16T10:54:29.825+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data manual__2025-12-16T10:48:11.424003+00:00 [queued]>
+[2025-12-16T10:54:29.826+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-12-16T10:54:29.838+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): ingest_weather_data> on 2025-12-16 10:48:11.424003+00:00
+[2025-12-16T10:54:29.843+0000] {standard_task_runner.py:57} INFO - Started process 333 to run task
+[2025-12-16T10:54:29.849+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job1_weather_ingestion', 'ingest_weather_data', 'manual__2025-12-16T10:48:11.424003+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/job1_ingestion_dag.py', '--cfg-path', '/tmp/tmp18uu7vru']
+[2025-12-16T10:54:29.852+0000] {standard_task_runner.py:85} INFO - Job 28: Subtask ingest_weather_data
+[2025-12-16T10:54:29.924+0000] {task_command.py:416} INFO - Running <TaskInstance: job1_weather_ingestion.ingest_weather_data manual__2025-12-16T10:48:11.424003+00:00 [running]> on host 483d33708ca4
+[2025-12-16T10:54:29.994+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job1_weather_ingestion' AIRFLOW_CTX_TASK_ID='ingest_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2025-12-16T10:48:11.424003+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-16T10:48:11.424003+00:00'
+[2025-12-16T10:54:29.997+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-16T10:54:29.997+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2025-12-16T10:54:29.998+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-16T10:54:30.105+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2025-12-16T10:54:30.106+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2025-12-16T10:54:30.109+0000] {logging_mixin.py:154} INFO - Starting weather data producer for 55 minutes...
+[2025-12-16T10:54:30.524+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T10:54:43.595+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T10:54:53.963+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T10:55:59.970+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T10:56:10.287+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T10:56:23.334+0000] {logging_mixin.py:154} INFO - Error fetching data for Shymkent: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=42.3417%2C69.5901&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T10:57:29.311+0000] {logging_mixin.py:154} INFO - Error fetching data for Almaty: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=43.222%2C76.8512&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T10:57:39.636+0000] {logging_mixin.py:154} INFO - Error fetching data for Astana: 429 Client Error: Too Many Requests for url: https://api.tomorrow.io/v4/timelines?location=51.1694%2C71.4491&fields=temperature&fields=humidity&fields=windSpeed&fields=precipitationIntensity&fields=weatherCode&timesteps=current&units=metric&apikey=AQD9YnFk7nHx6iVSXIFDgBIOz12qA1Mi
+[2025-12-16T10:57:45.200+0000] {local_task_job_runner.py:115} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-12-16T10:57:45.207+0000] {process_utils.py:131} INFO - Sending 15 to group 333. PIDs of all processes in the group: [333]
+[2025-12-16T10:57:45.207+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 333
+[2025-12-16T10:57:45.208+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-12-16T10:57:45.209+0000] {kafka.py:483} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2025-12-16T10:57:45.211+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-16T10:57:45.212+0000] {logging_mixin.py:154} INFO - Producer finished. Total messages sent: 0
+[2025-12-16T10:57:45.228+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/job1_ingestion_dag.py", line 30, in ingestion_task
+    run_producer(duration_minutes=55)
+  File "/opt/airflow/src/job1_producer.py", line 84, in run_producer
+    time.sleep(10)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-12-16T10:57:45.247+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=job1_weather_ingestion, task_id=ingest_weather_data, execution_date=20251216T104811, start_date=20251216T105429, end_date=20251216T105745
+[2025-12-16T10:57:45.282+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 28 for task ingest_weather_data (Task received SIGTERM signal; 333)
+[2025-12-16T10:57:45.301+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=333, status='terminated', exitcode=1, started='10:54:29') (333) terminated with exit code 1
+[2025-12-16T10:57:45.304+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 143
+[2025-12-16T10:57:45.321+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

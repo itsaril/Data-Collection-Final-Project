@@ -1,0 +1,37 @@
+[2025-12-16T12:43:31.709+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-16T11:00:00+00:00 [queued]>
+[2025-12-16T12:43:31.739+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-16T11:00:00+00:00 [queued]>
+[2025-12-16T12:43:31.740+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2025-12-16T12:43:31.778+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): ingest_weather_data> on 2025-12-16 11:00:00+00:00
+[2025-12-16T12:43:31.794+0000] {standard_task_runner.py:57} INFO - Started process 181 to run task
+[2025-12-16T12:43:31.807+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job1_weather_ingestion', 'ingest_weather_data', 'scheduled__2025-12-16T11:00:00+00:00', '--job-id', '26', '--raw', '--subdir', 'DAGS_FOLDER/job1_ingestion_dag.py', '--cfg-path', '/tmp/tmpera3rcrw']
+[2025-12-16T12:43:31.819+0000] {standard_task_runner.py:85} INFO - Job 26: Subtask ingest_weather_data
+[2025-12-16T12:43:32.141+0000] {task_command.py:416} INFO - Running <TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-16T11:00:00+00:00 [running]> on host 368de0f02f1d
+[2025-12-16T12:43:32.400+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job1_weather_ingestion' AIRFLOW_CTX_TASK_ID='ingest_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2025-12-16T11:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-16T11:00:00+00:00'
+[2025-12-16T12:43:36.427+0000] {conn.py:1527} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2025-12-16T12:43:36.429+0000] {conn.py:315} ERROR - DNS lookup failed for kafka:29092 (0)
+[2025-12-16T12:43:36.430+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2025-12-16T12:43:40.432+0000] {conn.py:1527} WARNING - DNS lookup failed for kafka:29092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+[2025-12-16T12:43:40.436+0000] {conn.py:315} ERROR - DNS lookup failed for kafka:29092 (0)
+[2025-12-16T12:43:40.441+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/job1_ingestion_dag.py", line 30, in ingestion_task
+    run_producer(duration_minutes=55)
+  File "/opt/airflow/src/job1_producer.py", line 64, in run_producer
+    producer = create_kafka_producer()
+  File "/opt/airflow/src/job1_producer.py", line 21, in create_kafka_producer
+    return KafkaProducer(
+  File "/home/airflow/.local/lib/python3.10/site-packages/kafka/producer/kafka.py", line 381, in __init__
+    client = KafkaClient(metrics=self._metrics, metric_group_prefix='producer',
+  File "/home/airflow/.local/lib/python3.10/site-packages/kafka/client_async.py", line 244, in __init__
+    self.config['api_version'] = self.check_version(timeout=check_timeout)
+  File "/home/airflow/.local/lib/python3.10/site-packages/kafka/client_async.py", line 927, in check_version
+    raise Errors.NoBrokersAvailable()
+kafka.errors.NoBrokersAvailable: NoBrokersAvailable
+[2025-12-16T12:43:40.534+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=job1_weather_ingestion, task_id=ingest_weather_data, execution_date=20251216T110000, start_date=20251216T124331, end_date=20251216T124340
+[2025-12-16T12:43:40.635+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 26 for task ingest_weather_data (NoBrokersAvailable; 181)
+[2025-12-16T12:43:40.684+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-12-16T12:43:40.734+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

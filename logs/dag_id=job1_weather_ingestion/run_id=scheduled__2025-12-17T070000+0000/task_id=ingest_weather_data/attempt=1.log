@@ -1,0 +1,57 @@
+[2025-12-17T08:00:02.243+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-17T07:00:00+00:00 [queued]>
+[2025-12-17T08:00:02.269+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-17T07:00:00+00:00 [queued]>
+[2025-12-17T08:00:02.270+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-12-17T08:00:02.306+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): ingest_weather_data> on 2025-12-17 07:00:00+00:00
+[2025-12-17T08:00:02.323+0000] {standard_task_runner.py:57} INFO - Started process 2997 to run task
+[2025-12-17T08:00:02.333+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job1_weather_ingestion', 'ingest_weather_data', 'scheduled__2025-12-17T07:00:00+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/job1_ingestion_dag.py', '--cfg-path', '/tmp/tmp97abc062']
+[2025-12-17T08:00:02.339+0000] {standard_task_runner.py:85} INFO - Job 14: Subtask ingest_weather_data
+[2025-12-17T08:00:02.424+0000] {task_command.py:416} INFO - Running <TaskInstance: job1_weather_ingestion.ingest_weather_data scheduled__2025-12-17T07:00:00+00:00 [running]> on host 2610621bd5d4
+[2025-12-17T08:00:02.629+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job1_weather_ingestion' AIRFLOW_CTX_TASK_ID='ingest_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2025-12-17T07:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-17T07:00:00+00:00'
+[2025-12-17T08:00:02.638+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-17T08:00:02.640+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2025-12-17T08:00:02.643+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-17T08:00:02.764+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2025-12-17T08:00:02.765+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2025-12-17T08:00:02.774+0000] {logging_mixin.py:154} INFO - The producer is launched on 58 min. Interval: 2 minutes.
+[2025-12-17T08:00:03.577+0000] {logging_mixin.py:154} INFO - Sent: Almaty в 2025-12-17T08:00:03.575704
+[2025-12-17T08:00:03.581+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-17T08:00:03.583+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-17T08:00:03.584+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-17T08:00:06.005+0000] {logging_mixin.py:154} INFO - Sent: Astana в 2025-12-17T08:00:06.004631
+[2025-12-17T08:00:08.589+0000] {logging_mixin.py:154} INFO - API error for Shymkent: 500 Server Error: Internal Server Error for url: https://api.tomorrow.io/v4/weather/realtime?location=42.3417%2C69.5901&apikey=gXtHoXgapISBqMEnSz3kQw99MKlLsj63&units=metric
+[2025-12-17T08:00:10.594+0000] {logging_mixin.py:154} INFO - Cycle completed. Waiting 592.2 sec. until next data collection...
+[2025-12-17T08:10:03.965+0000] {logging_mixin.py:154} INFO - Sent: Almaty в 2025-12-17T08:10:03.955554
+[2025-12-17T08:10:06.512+0000] {logging_mixin.py:154} INFO - Sent: Astana в 2025-12-17T08:10:06.507839
+[2025-12-17T08:10:09.070+0000] {logging_mixin.py:154} INFO - Sent: Shymkent в 2025-12-17T08:10:09.068406
+[2025-12-17T08:10:11.074+0000] {logging_mixin.py:154} INFO - Cycle completed. Waiting 591.6 sec. until next data collection...
+[2025-12-17T08:20:03.462+0000] {logging_mixin.py:154} INFO - Sent: Almaty в 2025-12-17T08:20:03.449934
+[2025-12-17T08:20:06.168+0000] {logging_mixin.py:154} INFO - Sent: Astana в 2025-12-17T08:20:06.166629
+[2025-12-17T08:20:14.986+0000] {logging_mixin.py:154} INFO - Sent: Shymkent в 2025-12-17T08:20:14.981561
+[2025-12-17T08:20:16.992+0000] {logging_mixin.py:154} INFO - Cycle completed. Waiting 585.6 sec. until next data collection...
+[2025-12-17T08:30:03.095+0000] {logging_mixin.py:154} INFO - Sent: Almaty в 2025-12-17T08:30:03.087448
+[2025-12-17T08:30:05.815+0000] {logging_mixin.py:154} INFO - Sent: Astana в 2025-12-17T08:30:05.813039
+[2025-12-17T08:30:08.395+0000] {logging_mixin.py:154} INFO - Sent: Shymkent в 2025-12-17T08:30:08.393997
+[2025-12-17T08:30:10.400+0000] {logging_mixin.py:154} INFO - Cycle completed. Waiting 592.1 sec. until next data collection...
+[2025-12-17T08:40:03.194+0000] {logging_mixin.py:154} INFO - Sent: Almaty в 2025-12-17T08:40:03.170971
+[2025-12-17T08:40:05.702+0000] {logging_mixin.py:154} INFO - Sent: Astana в 2025-12-17T08:40:05.701176
+[2025-12-17T08:40:08.347+0000] {logging_mixin.py:154} INFO - Sent: Shymkent в 2025-12-17T08:40:08.345903
+[2025-12-17T08:40:10.350+0000] {logging_mixin.py:154} INFO - Cycle completed. Waiting 592.0 sec. until next data collection...
+[2025-12-17T08:49:49.637+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to restarting. Terminating instance.
+[2025-12-17T08:49:49.708+0000] {process_utils.py:131} INFO - Sending 15 to group 2997. PIDs of all processes in the group: [2997]
+[2025-12-17T08:49:49.711+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 2997
+[2025-12-17T08:49:49.737+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-12-17T08:49:50.070+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/job1_ingestion_dag.py", line 27, in ingestion_task
+    def ingestion_task():
+  File "/opt/airflow/src/job1_producer.py", line 90, in run_producer
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-12-17T08:49:50.168+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=job1_weather_ingestion, task_id=ingest_weather_data, execution_date=20251217T070000, start_date=20251217T080002, end_date=20251217T084950
+[2025-12-17T08:49:50.289+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 14 for task ingest_weather_data (Task received SIGTERM signal; 2997)
+[2025-12-17T08:49:50.370+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=2997, status='terminated', exitcode=1, started='08:00:01') (2997) terminated with exit code 1

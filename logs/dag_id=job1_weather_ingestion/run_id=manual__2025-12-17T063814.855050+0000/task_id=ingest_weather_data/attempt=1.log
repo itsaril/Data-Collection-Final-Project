@@ -1,0 +1,49 @@
+[2025-12-17T06:38:15.537+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data manual__2025-12-17T06:38:14.855050+00:00 [queued]>
+[2025-12-17T06:38:15.550+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job1_weather_ingestion.ingest_weather_data manual__2025-12-17T06:38:14.855050+00:00 [queued]>
+[2025-12-17T06:38:15.552+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-12-17T06:38:15.571+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): ingest_weather_data> on 2025-12-17 06:38:14.855050+00:00
+[2025-12-17T06:38:15.576+0000] {standard_task_runner.py:57} INFO - Started process 282 to run task
+[2025-12-17T06:38:15.581+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job1_weather_ingestion', 'ingest_weather_data', 'manual__2025-12-17T06:38:14.855050+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/job1_ingestion_dag.py', '--cfg-path', '/tmp/tmpofv7u6tm']
+[2025-12-17T06:38:15.586+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask ingest_weather_data
+[2025-12-17T06:38:15.723+0000] {task_command.py:416} INFO - Running <TaskInstance: job1_weather_ingestion.ingest_weather_data manual__2025-12-17T06:38:14.855050+00:00 [running]> on host 2610621bd5d4
+[2025-12-17T06:38:15.850+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job1_weather_ingestion' AIRFLOW_CTX_TASK_ID='ingest_weather_data' AIRFLOW_CTX_EXECUTION_DATE='2025-12-17T06:38:14.855050+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-17T06:38:14.855050+00:00'
+[2025-12-17T06:38:15.859+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-17T06:38:15.862+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2025-12-17T06:38:15.866+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-17T06:38:15.982+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2025-12-17T06:38:15.983+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2025-12-17T06:38:15.990+0000] {logging_mixin.py:154} INFO - The producer is launched on 58 min. Interval: 2 minutes.
+[2025-12-17T06:38:16.540+0000] {logging_mixin.py:154} INFO - API error for Almaty: 'values'
+[2025-12-17T06:38:19.304+0000] {logging_mixin.py:154} INFO - API error for Astana: 'values'
+[2025-12-17T06:38:21.759+0000] {logging_mixin.py:154} INFO - API error for Shymkent: 'values'
+[2025-12-17T06:38:23.764+0000] {logging_mixin.py:154} INFO - Cycle completed. Waiting 112.2 sec. until next data collection...
+[2025-12-17T06:40:16.710+0000] {logging_mixin.py:154} INFO - API error for Almaty: 'values'
+[2025-12-17T06:40:19.115+0000] {logging_mixin.py:154} INFO - API error for Astana: 'values'
+[2025-12-17T06:40:21.519+0000] {logging_mixin.py:154} INFO - API error for Shymkent: 'values'
+[2025-12-17T06:40:23.524+0000] {logging_mixin.py:154} INFO - Cycle completed. Waiting 112.6 sec. until next data collection...
+[2025-12-17T06:42:16.772+0000] {logging_mixin.py:154} INFO - !!! API limit exceeded (429). Wait 30 seconds...
+[2025-12-17T06:42:49.239+0000] {logging_mixin.py:154} INFO - !!! API limit exceeded (429). Wait 30 seconds...
+[2025-12-17T06:43:16.066+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: connecting to kafka:29092 [('172.18.0.4', 29092) IPv4]
+[2025-12-17T06:43:16.069+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=kafka:29092 <connecting> [IPv4 ('172.18.0.4', 29092)]>: Connection complete.
+[2025-12-17T06:43:16.070+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=kafka:29092 <connected> [IPv4 ('172.18.0.4', 29092)]>: Closing connection. 
+[2025-12-17T06:43:21.701+0000] {logging_mixin.py:154} INFO - !!! API limit exceeded (429). Wait 30 seconds...
+[2025-12-17T06:43:53.724+0000] {logging_mixin.py:154} INFO - Cycle completed. Waiting 22.4 sec. until next data collection...
+[2025-12-17T06:44:08.792+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to restarting. Terminating instance.
+[2025-12-17T06:44:08.834+0000] {process_utils.py:131} INFO - Sending 15 to group 282. PIDs of all processes in the group: [282]
+[2025-12-17T06:44:08.836+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 282
+[2025-12-17T06:44:08.839+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-12-17T06:44:08.931+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/job1_ingestion_dag.py", line 27, in ingestion_task
+    run_producer(duration_minutes=58)
+  File "/opt/airflow/src/job1_producer.py", line 84, in run_producer
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 1634, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-12-17T06:44:08.962+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=job1_weather_ingestion, task_id=ingest_weather_data, execution_date=20251217T063814, start_date=20251217T063815, end_date=20251217T064408
+[2025-12-17T06:44:09.006+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 5 for task ingest_weather_data (Task received SIGTERM signal; 282)
+[2025-12-17T06:44:09.052+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=282, status='terminated', exitcode=1, started='06:38:15') (282) terminated with exit code 1

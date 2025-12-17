@@ -1,0 +1,15 @@
+[2025-12-17T09:40:52.069+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job3_daily_analytics.compute_daily_summary manual__2025-12-17T09:40:49.155784+00:00 [queued]>
+[2025-12-17T09:40:52.079+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job3_daily_analytics.compute_daily_summary manual__2025-12-17T09:40:49.155784+00:00 [queued]>
+[2025-12-17T09:40:52.080+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-12-17T09:40:52.091+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): compute_daily_summary> on 2025-12-17 09:40:49.155784+00:00
+[2025-12-17T09:40:52.098+0000] {standard_task_runner.py:57} INFO - Started process 6476 to run task
+[2025-12-17T09:40:52.101+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job3_daily_analytics', 'compute_daily_summary', 'manual__2025-12-17T09:40:49.155784+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/job3_daily_summary_dag.py', '--cfg-path', '/tmp/tmpln_h0nse']
+[2025-12-17T09:40:52.105+0000] {standard_task_runner.py:85} INFO - Job 38: Subtask compute_daily_summary
+[2025-12-17T09:40:52.160+0000] {task_command.py:416} INFO - Running <TaskInstance: job3_daily_analytics.compute_daily_summary manual__2025-12-17T09:40:49.155784+00:00 [running]> on host 2610621bd5d4
+[2025-12-17T09:40:52.383+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job3_daily_analytics' AIRFLOW_CTX_TASK_ID='compute_daily_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-12-17T09:40:49.155784+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-17T09:40:49.155784+00:00'
+[2025-12-17T09:40:52.384+0000] {logging_mixin.py:154} INFO - Computing analytics for date: 2025-12-16
+[2025-12-17T09:40:52.393+0000] {logging_mixin.py:154} INFO - No data available for analytics on 2025-12-16
+[2025-12-17T09:40:52.394+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-12-17T09:40:52.451+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=job3_daily_analytics, task_id=compute_daily_summary, execution_date=20251217T094049, start_date=20251217T094052, end_date=20251217T094052
+[2025-12-17T09:40:52.477+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-17T09:40:52.504+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

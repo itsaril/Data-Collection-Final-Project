@@ -1,0 +1,38 @@
+[2025-12-16T12:48:02.815+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: job3_daily_analytics.compute_daily_summary manual__2025-12-16T12:48:00.516986+00:00 [queued]>
+[2025-12-16T12:48:02.831+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: job3_daily_analytics.compute_daily_summary manual__2025-12-16T12:48:00.516986+00:00 [queued]>
+[2025-12-16T12:48:02.832+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-12-16T12:48:02.854+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): compute_daily_summary> on 2025-12-16 12:48:00.516986+00:00
+[2025-12-16T12:48:02.867+0000] {standard_task_runner.py:57} INFO - Started process 343 to run task
+[2025-12-16T12:48:02.873+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'job3_daily_analytics', 'compute_daily_summary', 'manual__2025-12-16T12:48:00.516986+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/job3_daily_summary_dag.py', '--cfg-path', '/tmp/tmp2de4nmkl']
+[2025-12-16T12:48:02.879+0000] {standard_task_runner.py:85} INFO - Job 32: Subtask compute_daily_summary
+[2025-12-16T12:48:03.021+0000] {task_command.py:416} INFO - Running <TaskInstance: job3_daily_analytics.compute_daily_summary manual__2025-12-16T12:48:00.516986+00:00 [running]> on host 368de0f02f1d
+[2025-12-16T12:48:03.458+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='team' AIRFLOW_CTX_DAG_ID='job3_daily_analytics' AIRFLOW_CTX_TASK_ID='compute_daily_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-12-16T12:48:00.516986+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-16T12:48:00.516986+00:00'
+[2025-12-16T12:48:03.460+0000] {logging_mixin.py:154} INFO - Computing analytics for date: 2025-12-15
+[2025-12-16T12:48:03.485+0000] {logging_mixin.py:154} INFO - Total records to analyze: 72
+[2025-12-16T12:48:03.517+0000] {logging_mixin.py:154} INFO - 
+Daily Summary Statistics:
+[2025-12-16T12:48:03.532+0000] {logging_mixin.py:154} INFO -       date location  avg_temperature  min_temperature  max_temperature  avg_humidity  avg_wind_speed  total_precipitation  record_count
+2025-12-16   Almaty             0.20             -1.8              1.7         76.85            0.81                  0.0            26
+2025-12-16   Astana            -8.75             -9.7             -8.1         84.48            5.95                  0.0            23
+2025-12-16 Shymkent             4.82              1.8              6.3         65.43            1.34                  0.0            23
+[2025-12-16T12:48:03.649+0000] {logging_mixin.py:154} INFO - Inserted 3 records into daily_summary table
+[2025-12-16T12:48:03.651+0000] {logging_mixin.py:154} INFO - 
+=== Additional Insights ===
+[2025-12-16T12:48:03.660+0000] {logging_mixin.py:154} INFO - 
+Overall Statistics:
+[2025-12-16T12:48:03.670+0000] {logging_mixin.py:154} INFO -       temperature   humidity  wind_speed  precipitation
+mean    -1.181944  75.638889    2.620833            NaN
+std      5.667310   9.274083         NaN            NaN
+max           NaN        NaN    7.700000            NaN
+sum           NaN        NaN         NaN            0.0
+[2025-12-16T12:48:03.671+0000] {logging_mixin.py:154} INFO - 
+Temperature by Location:
+[2025-12-16T12:48:03.674+0000] {logging_mixin.py:154} INFO - location
+Shymkent    4.82
+Almaty      0.20
+Astana     -8.75
+Name: avg_temperature, dtype: float64
+[2025-12-16T12:48:03.676+0000] {python.py:194} INFO - Done. Returned value was: None
+[2025-12-16T12:48:03.696+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=job3_daily_analytics, task_id=compute_daily_summary, execution_date=20251216T124800, start_date=20251216T124802, end_date=20251216T124803
+[2025-12-16T12:48:03.770+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-12-16T12:48:03.808+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
