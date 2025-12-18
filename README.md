@@ -6,9 +6,9 @@ This project implements a complete **End-to-End Data Pipeline** that collects, p
 
 ## 👥 Team Information
 
-* **Student 1:** Zhilikbay Arman  #22B030358
-* **Student 2:** Shakhizada Zgansulu #22B030468
-* **Student 3:** Myrzakhankyzy Arailym #22B030408
+* **Student 1:** Zhilikbay Arman  - 22B030358
+* **Student 2:** Shakhizada Zgansulu - 22B030468
+* **Student 3:** Myrzakhankyzy Arailym - 22B030408
 
 ---
 
@@ -88,4 +88,5 @@ Navigate to `http://localhost:8080`
 | 2 | 2025-12-17 09:09:02 | Almaty | 2.8 | 80.0 | 0.3 | NULL | 5001 | 2025-12-17 09:40:54 |
 | 3 | 2025-12-17 09:09:31 | Almaty | 2.8 | 80.0 | 0.3 | NULL | 5001 | 2025-12-17 09:40:54 |
 | 15 | 2025-12-17 10:00:02 | Almaty | 2.0 | 85.0 | 0.3 | NULL | 5001 | 2025-12-17 10:00:14 |
+
 
