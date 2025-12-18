@@ -1,6 +1,9 @@
 version: '3.8'
 
 services:
+  # -------------------------
+  # ZOOKEEPER
+  # -------------------------
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
     container_name: zookeeper
@@ -8,10 +11,13 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
     ports:
-      - "2181:2181"
+      - "21812:2181"
     networks:
       - pipeline-network
 
+  # -------------------------
+  # KAFKA
+  # -------------------------
   kafka:
     image: confluentinc/cp-kafka:7.5.0
     container_name: kafka
@@ -30,6 +36,9 @@ services:
     networks:
       - pipeline-network
 
+  # -------------------------
+  # POSTGRES (Airflow DB)
+  # -------------------------
   postgres:
     image: postgres:13
     container_name: airflow-postgres
@@ -44,12 +53,40 @@ services:
     networks:
       - pipeline-network
 
+  # -------------------------
+  # AIRFLOW INIT
+  # -------------------------
+  airflow-init:
+    build: .
+    container_name: airflow-init
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__FERNET_KEY: 'UKMzEm3yIuFYEq1y3-2FxPNWSVwRASpahmQ9kQfEr8E='
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    command: >
+      bash -c "
+      airflow db migrate && \
+      airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin
+      "
+    networks:
+      - pipeline-network
+
+  # -------------------------
+  # AIRFLOW WEBSERVER
+  # -------------------------
   airflow-webserver:
     build: .
     container_name: airflow-webserver
     depends_on:
-      - postgres
-      - kafka
+      postgres:
+        condition: service_started
+      kafka:
+        condition: service_started
+      airflow-init:
+        condition: service_completed_successfully
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
@@ -65,17 +102,23 @@ services:
       - ./logs:/opt/airflow/logs
     ports:
       - "8080:8080"
-    command: webserver
+    command: airflow webserver
     networks:
       - pipeline-network
 
+  # -------------------------
+  # AIRFLOW SCHEDULER
+  # -------------------------
   airflow-scheduler:
     build: .
     container_name: airflow-scheduler
     depends_on:
-      - postgres
-      - kafka
-      - airflow-webserver
+      postgres:
+        condition: service_started
+      kafka:
+        condition: service_started
+      airflow-init:
+        condition: service_completed_successfully
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
       AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
@@ -86,7 +129,7 @@ services:
       - ./src:/opt/airflow/src
       - ./data:/opt/airflow/data
       - ./logs:/opt/airflow/logs
-    command: scheduler
+    command: airflow scheduler
     networks:
       - pipeline-network
 

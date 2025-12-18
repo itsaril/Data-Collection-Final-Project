@@ -14473,3 +14473,246 @@ File Path                                    PID    Runtime      # DAGs    # Err
 /opt/airflow/dags/job2_clean_store_dag.py                             1           0  0.65s           2025-12-17T10:04:56
 /opt/airflow/dags/job3_daily_summary_dag.py                           1           0  0.63s           2025-12-17T10:04:56
 ================================================================================
+[2025-12-18T09:02:00.297+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-12-18T09:02:00.298+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-12-18T09:02:00.299+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-12-18T09:02:00.299+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-12-18T09:02:00.305+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-12-18T09:02:00.406+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/job3_daily_summary_dag.py    164  0.05s             0           0
+/opt/airflow/dags/job2_clean_store_dag.py      166  0.04s             0           0
+/opt/airflow/dags/job1_ingestion_dag.py                               0           0
+================================================================================
+[2025-12-18T09:02:31.268+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    181  0.04s             1           0  0.63s           2025-12-18T09:02:00
+/opt/airflow/dags/job2_clean_store_dag.py      183  0.01s             1           0  0.61s           2025-12-18T09:02:00
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.11s           2025-12-18T09:02:01
+================================================================================
+[2025-12-18T09:03:01.896+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    198  0.02s             1           0  0.34s           2025-12-18T09:02:31
+/opt/airflow/dags/job2_clean_store_dag.py      201  0.00s             1           0  0.46s           2025-12-18T09:02:31
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.09s           2025-12-18T09:02:31
+================================================================================
+[2025-12-18T09:03:32.578+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    215  0.02s             1           0  0.42s           2025-12-18T09:03:02
+/opt/airflow/dags/job2_clean_store_dag.py      218  0.01s             1           0  0.41s           2025-12-18T09:03:02
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.07s           2025-12-18T09:03:02
+================================================================================
+[2025-12-18T09:04:03.221+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    232  0.02s             1           0  0.37s           2025-12-18T09:03:32
+/opt/airflow/dags/job2_clean_store_dag.py      235  0.00s             1           0  0.36s           2025-12-18T09:03:32
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.06s           2025-12-18T09:03:32
+================================================================================
+[2025-12-18T09:04:33.790+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    249  0.01s             1           0  0.22s           2025-12-18T09:04:03
+/opt/airflow/dags/job2_clean_store_dag.py      252  0.00s             1           0  0.33s           2025-12-18T09:04:03
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.09s           2025-12-18T09:04:03
+================================================================================
+[2025-12-18T09:05:04.394+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    266  0.02s             1           0  0.21s           2025-12-18T09:04:33
+/opt/airflow/dags/job2_clean_store_dag.py      269  0.00s             1           0  0.31s           2025-12-18T09:04:34
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.07s           2025-12-18T09:04:34
+================================================================================
+[2025-12-18T09:05:06.208+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2025-12-18T09:05:30.159+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2025-12-18T09:05:30.160+0000] {manager.py:488} INFO - Process each file at most once every 30 seconds
+[2025-12-18T09:05:30.161+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-12-18T09:05:30.161+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-12-18T09:05:30.165+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-12-18T09:05:30.204+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/job3_daily_summary_dag.py    164  0.02s             0           0
+/opt/airflow/dags/job2_clean_store_dag.py      165  0.02s             0           0
+/opt/airflow/dags/job1_ingestion_dag.py                               0           0
+================================================================================
+[2025-12-18T09:06:00.932+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    181  0.02s             1           0  0.44s           2025-12-18T09:05:30
+/opt/airflow/dags/job2_clean_store_dag.py      184  0.00s             1           0  0.46s           2025-12-18T09:05:30
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.10s           2025-12-18T09:05:30
+================================================================================
+[2025-12-18T09:06:31.505+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    211  0.01s             1           0  0.24s           2025-12-18T09:06:01
+/opt/airflow/dags/job2_clean_store_dag.py      214  0.00s             1           0  0.33s           2025-12-18T09:06:01
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.07s           2025-12-18T09:06:01
+================================================================================
+[2025-12-18T09:07:02.123+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    228  0.02s             1           0  0.31s           2025-12-18T09:06:31
+/opt/airflow/dags/job2_clean_store_dag.py      231  0.01s             1           0  0.31s           2025-12-18T09:06:31
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.05s           2025-12-18T09:06:31
+================================================================================
+[2025-12-18T09:07:32.678+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    245  0.01s             1           0  0.30s           2025-12-18T09:07:02
+/opt/airflow/dags/job2_clean_store_dag.py      248  0.00s             1           0  0.30s           2025-12-18T09:07:02
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.06s           2025-12-18T09:07:02
+================================================================================
+[2025-12-18T09:08:03.242+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    262  0.02s             1           0  0.20s           2025-12-18T09:07:32
+/opt/airflow/dags/job2_clean_store_dag.py      265  0.00s             1           0  0.29s           2025-12-18T09:07:32
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.07s           2025-12-18T09:07:32
+================================================================================
+[2025-12-18T09:08:33.788+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    279  0.01s             1           0  0.24s           2025-12-18T09:08:03
+/opt/airflow/dags/job2_clean_store_dag.py      282  0.00s             1           0  0.33s           2025-12-18T09:08:03
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.07s           2025-12-18T09:08:03
+================================================================================
+[2025-12-18T09:09:04.290+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    299  0.01s             1           0  0.22s           2025-12-18T09:08:33
+/opt/airflow/dags/job2_clean_store_dag.py      302  0.00s             1           0  0.30s           2025-12-18T09:08:34
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.07s           2025-12-18T09:08:34
+================================================================================
+[2025-12-18T09:09:34.957+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    316  0.01s             1           0  0.36s           2025-12-18T09:09:04
+/opt/airflow/dags/job2_clean_store_dag.py      319  0.00s             1           0  0.38s           2025-12-18T09:09:04
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.06s           2025-12-18T09:09:04
+================================================================================
+[2025-12-18T09:10:05.561+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    333  0.02s             1           0  0.32s           2025-12-18T09:09:35
+/opt/airflow/dags/job2_clean_store_dag.py      336  0.00s             1           0  0.33s           2025-12-18T09:09:35
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.06s           2025-12-18T09:09:35
+================================================================================
+[2025-12-18T09:10:31.139+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-12-18T09:10:31.148+0000] {manager.py:758} INFO - There are 3 files in /opt/airflow/dags
+[2025-12-18T09:10:36.220+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    350  0.01s             1           0  0.35s           2025-12-18T09:10:05
+/opt/airflow/dags/job2_clean_store_dag.py      353  0.00s             1           0  0.34s           2025-12-18T09:10:05
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.06s           2025-12-18T09:10:05
+================================================================================
+[2025-12-18T09:11:06.786+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    367  0.01s             1           0  0.23s           2025-12-18T09:10:36
+/opt/airflow/dags/job2_clean_store_dag.py      370  0.00s             1           0  0.31s           2025-12-18T09:10:36
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.07s           2025-12-18T09:10:36
+================================================================================
+[2025-12-18T09:11:37.305+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    384  0.02s             1           0  0.19s           2025-12-18T09:11:06
+/opt/airflow/dags/job2_clean_store_dag.py      387  0.00s             1           0  0.27s           2025-12-18T09:11:07
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.06s           2025-12-18T09:11:07
+================================================================================
+[2025-12-18T09:12:07.849+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    411  0.02s             1           0  0.23s           2025-12-18T09:11:37
+/opt/airflow/dags/job2_clean_store_dag.py      414  0.00s             1           0  0.31s           2025-12-18T09:11:37
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.07s           2025-12-18T09:11:37
+================================================================================
+[2025-12-18T09:12:38.409+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    428  0.01s             1           0  0.28s           2025-12-18T09:12:08
+/opt/airflow/dags/job2_clean_store_dag.py      431  0.00s             1           0  0.29s           2025-12-18T09:12:08
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.06s           2025-12-18T09:12:08
+================================================================================
+[2025-12-18T09:13:09.032+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                      PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/job3_daily_summary_dag.py    445  0.02s             1           0  0.32s           2025-12-18T09:12:38
+/opt/airflow/dags/job2_clean_store_dag.py      448  0.00s             1           0  0.32s           2025-12-18T09:12:38
+/opt/airflow/dags/job1_ingestion_dag.py                               1           0  0.08s           2025-12-18T09:12:38
+================================================================================
