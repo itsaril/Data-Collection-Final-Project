@@ -6,7 +6,7 @@ This project implements a complete **End-to-End Data Pipeline** that collects, p
 
 ## 👥 Team Information
 
-* **Student 1:** Zhilikbay Arman  #22B
+* **Student 1:** Zhilikbay Arman  #22B030358
 * **Student 2:** Shakhizada Zgansulu #22B030468
 * **Student 3:** Myrzakhankyzy Arailym #22B030408
 
@@ -48,24 +48,6 @@ The pipeline is divided into three main stages, each orchestrated by a dedicated
 
 ---
 
-## 📂 Project Structure
-
-```text
-project/
-├── airflow/
-│   └── dags/                  # Airflow DAG files
-├── src/                       # Core Logic
-│   ├── job1_producer.py       # API -> Kafka logic
-│   ├── job2_cleaner.py        # Kafka -> SQLite logic (Pandas)
-│   ├── job3_analytics.py      # Analytics logic (Pandas)
-│   └── db_utils.py            # SQLite helper functions
-├── data/                      # Local storage for app.db
-├── Dockerfile                 # Custom Airflow image with dependencies
-├── docker-compose.yml         # Full infrastructure setup
-└── requirements.txt           # Python libraries
-
-```
-
 ---
 
 ## 🚀 How to Run
@@ -78,7 +60,7 @@ cd your-repo-name
 ```
 2. **Launch the environment:**
 ```bash
-docker-compose up --build
+docker-compose up -d
 
 ```
 
@@ -88,25 +70,22 @@ Navigate to `http://localhost:8080`
 * **Login:** `admin`
 * **Password:** `admin`
 
-
-
 ---
 
 ## 📊 Database Schema
 
-### `events` table (Cleaned Data)
+### `daily_summary` table (Cleaned Data)
 
-| Column | Type | Description |
-| --- | --- | --- |
-| `timestamp` | TEXT | Event time |
-| `location` | TEXT | Almaty (lat/lon) |
-| `temperature` | REAL | Celsius |
-| `humidity` | REAL | Percentage |
+| id | date | location | avg_temp | min_temp | max_temp | avg_humidity | avg_wind | precip | records | created_at |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 3 | 2025-12-17 | Almaty | 2.75 | 2.0 | 2.8 | 80.33 | 0.3 | 0.0 | 15 | 2025-12-18 09:43:04 |
 
-### `daily_summary` table (Analytics)
+### `events` table (Analytics)
 
-| Column | Type | Description |
-| --- | --- | --- |
-| `date` | TEXT | Summary date |
-| `avg_temperature` | REAL | Mean temperature |
-| `record_count` | INT | Total samples per day |
+| id | timestamp | location | temperature | humidity | wind_speed | precipitation | weather_code | created_at |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | 2025-12-17 09:08:55 | Almaty | 2.8 | 80.0 | 0.3 | NULL | 5001 | 2025-12-17 09:40:54 |
+| 2 | 2025-12-17 09:09:02 | Almaty | 2.8 | 80.0 | 0.3 | NULL | 5001 | 2025-12-17 09:40:54 |
+| 3 | 2025-12-17 09:09:31 | Almaty | 2.8 | 80.0 | 0.3 | NULL | 5001 | 2025-12-17 09:40:54 |
+| 15 | 2025-12-17 10:00:02 | Almaty | 2.0 | 85.0 | 0.3 | NULL | 5001 | 2025-12-17 10:00:14 |
+
